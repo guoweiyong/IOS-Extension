@@ -16,6 +16,8 @@
 		22232452246E236A00EEA04B /* IOS_ExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22232451246E236A00EEA04B /* IOS_ExtensionTests.m */; };
 		2223245D246E236A00EEA04B /* IOS_ExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223245C246E236A00EEA04B /* IOS_ExtensionUITests.m */; };
 		2223246E246E262A00EEA04B /* GYTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223246D246E262A00EEA04B /* GYTextViewViewController.m */; };
+		5CE6AD6424716927000E65E9 /* GYTextViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CE6AD6224716927000E65E9 /* GYTextViewVC.swift */; };
+		5CE6AD6524716927000E65E9 /* GYTextViewVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5CE6AD6324716927000E65E9 /* GYTextViewVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +56,9 @@
 		2223245E246E236A00EEA04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2223246C246E262A00EEA04B /* GYTextViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYTextViewViewController.h; sourceTree = "<group>"; };
 		2223246D246E262A00EEA04B /* GYTextViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYTextViewViewController.m; sourceTree = "<group>"; };
+		5CE6AD5D2471688D000E65E9 /* IOS-Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "IOS-Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		5CE6AD6224716927000E65E9 /* GYTextViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GYTextViewVC.swift; sourceTree = "<group>"; };
+		5CE6AD6324716927000E65E9 /* GYTextViewVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GYTextViewVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +120,7 @@
 				22232443246E236A00EEA04B /* LaunchScreen.storyboard */,
 				22232446246E236A00EEA04B /* Info.plist */,
 				22232447246E236A00EEA04B /* main.m */,
+				5CE6AD5D2471688D000E65E9 /* IOS-Extension-Bridging-Header.h */,
 			);
 			path = "IOS-Extension";
 			sourceTree = "<group>";
@@ -147,10 +153,20 @@
 		2223246B246E23B300EEA04B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2223246C246E262A00EEA04B /* GYTextViewViewController.h */,
-				2223246D246E262A00EEA04B /* GYTextViewViewController.m */,
+				5CE6AD5C24716851000E65E9 /* TextView */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5CE6AD5C24716851000E65E9 /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				2223246C246E262A00EEA04B /* GYTextViewViewController.h */,
+				2223246D246E262A00EEA04B /* GYTextViewViewController.m */,
+				5CE6AD6224716927000E65E9 /* GYTextViewVC.swift */,
+				5CE6AD6324716927000E65E9 /* GYTextViewVC.xib */,
+			);
+			path = TextView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +237,7 @@
 				TargetAttributes = {
 					22232431246E236800EEA04B = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1140;
 					};
 					2223244C246E236A00EEA04B = {
 						CreatedOnToolsVersion = 11.3.1;
@@ -259,6 +276,7 @@
 			files = (
 				22232445246E236A00EEA04B /* LaunchScreen.storyboard in Resources */,
 				22232442246E236A00EEA04B /* Assets.xcassets in Resources */,
+				5CE6AD6524716927000E65E9 /* GYTextViewVC.xib in Resources */,
 				22232440246E236800EEA04B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,6 +305,7 @@
 				2223246E246E262A00EEA04B /* GYTextViewViewController.m in Sources */,
 				2223243D246E236800EEA04B /* ViewController.m in Sources */,
 				22232437246E236800EEA04B /* AppDelegate.m in Sources */,
+				5CE6AD6424716927000E65E9 /* GYTextViewVC.swift in Sources */,
 				22232448246E236A00EEA04B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JMG777KN;
 				INFOPLIST_FILE = "IOS-Extension/Info.plist";
@@ -466,6 +486,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ceshi.IOS-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS-Extension/IOS-Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -474,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JMG777KN;
 				INFOPLIST_FILE = "IOS-Extension/Info.plist";
@@ -484,6 +508,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ceshi.IOS-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "IOS-Extension/IOS-Extension-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -491,6 +517,7 @@
 		22232465246E236A00EEA04B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JMG777KN;
@@ -511,6 +538,7 @@
 		22232466246E236A00EEA04B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JMG777KN;
@@ -531,6 +559,7 @@
 		22232468246E236A00EEA04B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JMG777KN;
 				INFOPLIST_FILE = "IOS-ExtensionUITests/Info.plist";
@@ -549,6 +578,7 @@
 		22232469246E236A00EEA04B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W3JMG777KN;
 				INFOPLIST_FILE = "IOS-ExtensionUITests/Info.plist";

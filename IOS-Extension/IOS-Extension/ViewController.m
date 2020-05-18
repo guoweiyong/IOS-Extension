@@ -50,10 +50,10 @@ static NSString *cellIdentifier = @"cellIdentifier";
         case 0:
         {
             //如果要创建对象。必须加上{} 不然报错
-//            GYTextViewViewController *textViewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GYTextView"];
-//            [self.navigationController pushViewController:textViewVC animated:YES];
-            GYTextViewVC *vc = [[GYTextViewVC alloc]initWithNibName:@"GYTextViewVC" bundle:nil];
-            [self.navigationController pushViewController:vc animated:YES];
+            GYTextViewViewController *textViewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GYTextView"];
+            [self.navigationController pushViewController:textViewVC animated:YES];
+//            GYTextViewVC *vc = [[GYTextViewVC alloc]initWithNibName:@"GYTextViewVC" bundle:nil];
+//            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
             

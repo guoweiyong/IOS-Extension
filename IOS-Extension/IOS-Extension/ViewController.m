@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "GYTextViewViewController.h"
 #import <IOS_Extension-Swift.h>
+#import "GYUIImageController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -46,20 +47,26 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    UIViewController *pushVC;
     switch (indexPath.row) {
         case 0:
         {
             //如果要创建对象。必须加上{} 不然报错
-            GYTextViewViewController *textViewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GYTextView"];
-            [self.navigationController pushViewController:textViewVC animated:YES];
+            pushVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GYTextView"];
 //            GYTextViewVC *vc = [[GYTextViewVC alloc]initWithNibName:@"GYTextViewVC" bundle:nil];
 //            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
+        case 1:{
+            pushVC = [[GYUIImageController alloc] initWithNibName:@"GYUIImageController" bundle:nil];
+            
+        }
             
         default:
             break;
     }
+    
+     [self.navigationController pushViewController:pushVC animated:YES];
     
 }
 
@@ -67,7 +74,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[@"UITextView"];
+        _listArray = @[@"UITextView",@"UIImage"];
     }
     
     return _listArray;

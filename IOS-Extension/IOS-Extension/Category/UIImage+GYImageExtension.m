@@ -31,6 +31,8 @@
     //得到当前画布上的图片
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     
+    //结束画布
+    UIGraphicsEndImageContext();
     
     return resultImage;
 }

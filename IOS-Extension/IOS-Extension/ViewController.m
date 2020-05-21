@@ -10,6 +10,7 @@
 #import "GYTextViewViewController.h"
 #import <IOS_Extension-Swift.h>
 #import "GYUIImageController.h"
+#import "GYVisableViewController.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -59,7 +60,11 @@ static NSString *cellIdentifier = @"cellIdentifier";
             break;
         case 1:{
             pushVC = [[GYUIImageController alloc] initWithNibName:@"GYUIImageController" bundle:nil];
+        }
+            break;
             
+        case 2: {
+            pushVC = [[GYVisableViewController alloc] initWithNibName:@"GYVisableViewController" bundle:nil];
         }
             
         default:
@@ -74,7 +79,7 @@ static NSString *cellIdentifier = @"cellIdentifier";
 
 - (NSArray *)listArray {
     if (!_listArray) {
-        _listArray = @[@"UITextView",@"UIImage"];
+        _listArray = @[@"UITextView",@"UIImage",@"UIView"];
     }
     
     return _listArray;

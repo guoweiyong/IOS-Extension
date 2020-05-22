@@ -60,7 +60,76 @@
     UIGraphicsEndImageContext();
     
     return resultImage;
+}
 
++ (UIImage *)clipImageToRound:(UIImage *)originalImage {
+    CGSize size = originalImage.size;
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    
+    //1.使用Quartz2D来进行裁剪
+    //获取上下文
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();
+    //.增加一个圆
+    CGContextAddEllipseInRect(contextRef, rect);
+    //3裁剪
+    CGContextClip(contextRef);
+
+    //但是裁剪之后我们需要把 这个裁剪之后的路径绘制到图片上
+    [originalImage drawInRect:rect];
+    
+//    //使用UIBezierPath
+//    UIBezierPath *bezierPath = [UIBezierPath bezierPathWithOvalInRect:rect];
+//    //在路径上增加一个裁剪内容
+//    [bezierPath addClip];
+//    [[UIColor orangeColor] setFill];
+//
+//    //根据添加的裁剪内容，裁剪这个rect
+//    UIRectClip(rect);
+//
+//    //需要把裁剪的图片会知道上下文中
+//    [originalImage drawInRect:rect];
+    
+    
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return resultImage;
+}
+
++ (UIImage *)waterAtImage:(UIImage *)originalImage waterText:(NSString *)text startPoint:(CGPoint)point attributes:(NSDictionary<NSAttributedStringKey,id> *)attrs {
+    CGSize imageSize = originalImage.size;
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
+    
+    CGRect rect = CGRectMake(0, 0, imageSize.width, imageSize.height);
+    //首先需要绘制图片
+    [originalImage drawInRect: rect];
+    
+    //开始绘制文字
+    [text drawAtPoint:point withAttributes:attrs];
+    
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    //关闭上下问
+    UIGraphicsEndImageContext();
+    
+    return resultImage;
+}
+
++ (UIImage *)waterAtImage:(UIImage *)originalImage waterImage:(UIImage *)waterimage rect:(CGRect)rect {
+    CGSize imageSize = originalImage.size;
+    UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
+    
+    CGRect originalRect = CGRectMake(0, 0, imageSize.width, imageSize.height);
+    [originalImage drawInRect:originalRect];
+    
+    //绘制水印图片
+    [waterimage drawInRect:rect];
+    
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    return resultImage;
 }
 
 - (UIImage *)imageWithWidth:(CGFloat)width {

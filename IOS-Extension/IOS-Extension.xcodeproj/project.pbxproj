@@ -16,6 +16,7 @@
 		22232452246E236A00EEA04B /* IOS_ExtensionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 22232451246E236A00EEA04B /* IOS_ExtensionTests.m */; };
 		2223245D246E236A00EEA04B /* IOS_ExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223245C246E236A00EEA04B /* IOS_ExtensionUITests.m */; };
 		2223246E246E262A00EEA04B /* GYTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223246D246E262A00EEA04B /* GYTextViewViewController.m */; };
+		223D9D4A247D0B9100791F3A /* NSString+GYFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 223D9D49247D0B9100791F3A /* NSString+GYFilePath.m */; };
 		22716C4C247361B2007FFB2F /* UIImage+GYImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22716C4B247361B2007FFB2F /* UIImage+GYImageExtension.m */; };
 		22716C512473627D007FFB2F /* GYUIImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22716C4F2473627D007FFB2F /* GYUIImageController.m */; };
 		22716C522473627D007FFB2F /* GYUIImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22716C502473627D007FFB2F /* GYUIImageController.xib */; };
@@ -64,6 +65,8 @@
 		2223245E246E236A00EEA04B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2223246C246E262A00EEA04B /* GYTextViewViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYTextViewViewController.h; sourceTree = "<group>"; };
 		2223246D246E262A00EEA04B /* GYTextViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYTextViewViewController.m; sourceTree = "<group>"; };
+		223D9D48247D0B9100791F3A /* NSString+GYFilePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GYFilePath.h"; sourceTree = "<group>"; };
+		223D9D49247D0B9100791F3A /* NSString+GYFilePath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GYFilePath.m"; sourceTree = "<group>"; };
 		22716C4A247361B2007FFB2F /* UIImage+GYImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GYImageExtension.h"; sourceTree = "<group>"; };
 		22716C4B247361B2007FFB2F /* UIImage+GYImageExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GYImageExtension.m"; sourceTree = "<group>"; };
 		22716C4E2473627D007FFB2F /* GYUIImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYUIImageController.h; sourceTree = "<group>"; };
@@ -167,6 +170,7 @@
 		2223246A246E23AB00EEA04B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				223D9D47247D0B3C00791F3A /* NSString */,
 				229335CE247608E000D58D2C /* UIView */,
 				229335CD247608C500D58D2C /* UIImage */,
 			);
@@ -181,6 +185,15 @@
 				5CE6AD5C24716851000E65E9 /* TextView */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		223D9D47247D0B3C00791F3A /* NSString */ = {
+			isa = PBXGroup;
+			children = (
+				223D9D48247D0B9100791F3A /* NSString+GYFilePath.h */,
+				223D9D49247D0B9100791F3A /* NSString+GYFilePath.m */,
+			);
+			path = NSString;
 			sourceTree = "<group>";
 		};
 		22716C4D2473625C007FFB2F /* UIimage */ = {
@@ -394,6 +407,7 @@
 				22716C4C247361B2007FFB2F /* UIImage+GYImageExtension.m in Sources */,
 				5CE6AD6424716927000E65E9 /* GYTextViewVC.swift in Sources */,
 				22716C512473627D007FFB2F /* GYUIImageController.m in Sources */,
+				223D9D4A247D0B9100791F3A /* NSString+GYFilePath.m in Sources */,
 				22232448246E236A00EEA04B /* main.m in Sources */,
 				229335D6247610CF00D58D2C /* UIView+GYVisible.m in Sources */,
 				229335DE2476196D00D58D2C /* UIView+GYVisable.swift in Sources */,

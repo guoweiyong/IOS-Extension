@@ -99,6 +99,65 @@
     return resultImage;
 }
 
++ (UIImage *)clipRoundedCornerImageWithRadius:(float)radius rectSize:(CGSize)size originalImage:(nonnull UIImage *)originalImage {
+    UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);
+    CGContextRef contextRef = UIGraphicsGetCurrentContext();
+    
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    //添加一个描述路径
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    
+    //增加左上角的裁剪t路径
+    CGPoint leftTopPoint1 = CGPointMake(0, radius);
+    CGPoint leftTopPoint2 = CGPointMake(radius, 0);
+    CGPoint rightTopPoint1 = CGPointMake(size.width - radius, 0);
+    CGPoint rightbottomPoint1 = CGPointMake(size.width, size.height - radius);
+    CGPoint leftBottomPoint1 = CGPointMake(radius, size.height);
+
+    CGPoint center1 = CGPointMake(size.width-radius, radius);
+    [bezierPath moveToPoint:leftTopPoint2];
+    [bezierPath addLineToPoint:rightTopPoint1];
+    //增加一个圆弧
+    [bezierPath addArcWithCenter:center1 radius:radius startAngle:(CGFloat)(M_PI * 3 / 2) endAngle:0 clockwise:true];
+    
+    //增加右上角右上角的裁剪路径
+    CGPoint center2 = CGPointMake(size.width - radius, size.height - radius);
+    [bezierPath addLineToPoint:rightbottomPoint1];
+    [bezierPath addArcWithCenter:center2 radius:radius startAngle:0 endAngle:(CGFloat)(M_PI_2) clockwise:YES];
+
+    //增加右下角的裁剪途径
+    CGPoint center3 = CGPointMake(radius, size.height - radius);
+    [bezierPath addLineToPoint:leftBottomPoint1];
+    [bezierPath addArcWithCenter:center3 radius:radius startAngle:(CGFloat)M_PI_2 endAngle:(CGFloat)M_PI clockwise:YES];
+
+    //增加左下角的裁剪路径
+    CGPoint center4 = CGPointMake(radius, radius);
+    [bezierPath addLineToPoint:leftTopPoint1];
+    [bezierPath addArcWithCenter:center4 radius:radius startAngle:(CGFloat)(M_PI) endAngle:(CGFloat)(M_PI * 3 / 2) clockwise:YES];
+    //[bezierPath addLineToPoint:leftTopPoint2];
+    //关闭路径
+    [bezierPath closePath];
+
+    //填充颜色
+    [[UIColor clearColor] setFill];
+    //设置路径充满
+    [bezierPath fill];
+    
+    //在上下文中添加一个路径  在根据路径裁剪一个区域
+    CGContextAddPath(contextRef, bezierPath.CGPath);
+    CGContextClip(contextRef);
+    
+    //把图片会知道这个区域内
+    [originalImage drawInRect:rect];
+    
+    //得到上下文中渲染的图片
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return  resultImage;
+    
+}
+
 + (UIImage *)waterAtImage:(UIImage *)originalImage waterText:(NSString *)text startPoint:(CGPoint)point attributes:(NSDictionary<NSAttributedStringKey,id> *)attrs {
     CGSize imageSize = originalImage.size;
     UIGraphicsBeginImageContextWithOptions(imageSize, NO, [UIScreen mainScreen].scale);
@@ -129,6 +188,26 @@
     
     UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
     
+    return resultImage;
+}
+
++ (UIImage *)wipeView:(UIView *)view point:(CGPoint)point size:(CGSize)size {
+    //开启图形上下文
+    UIGraphicsBeginImageContext(view.bounds.size);
+    //获取当前上下文
+    CGContextRef ctx = UIGraphicsGetCurrentContext();
+    //渲染
+    [view.layer renderInContext:ctx];
+    //计算擦除的rect
+    CGFloat clipX = point.x - size.width/2;
+    CGFloat clipY = point.y - size.height/2;
+    CGRect clipRect = CGRectMake(clipX, clipY, size.width, size.height);
+    //将该区域设置为透明
+    CGContextClearRect(ctx, clipRect);
+    //获取新的图片
+    UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
     return resultImage;
 }
 

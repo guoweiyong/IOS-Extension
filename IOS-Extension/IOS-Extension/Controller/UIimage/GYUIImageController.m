@@ -53,8 +53,11 @@
             //self.imageView.image = [UIImage waterAtImage:image waterText:@"文字水印" startPoint:CGPointMake(10, 10) attributes:@{NSFontAttributeName: [UIFont boldSystemFontOfSize:14], NSForegroundColorAttributeName: [UIColor redColor]}];
             
             //该图片添加水印图片
-            UIImage *waterImage = [UIImage creatImageForColor:self.imageView.frame.size bgColor:UIColor.orangeColor];
-            self.imageView.image = [UIImage waterAtImage:image waterImage:waterImage rect:CGRectMake(10, 10, 30, 30)];
+//            UIImage *waterImage = [UIImage creatImageForColor:self.imageView.frame.size bgColor:UIColor.orangeColor];
+//            self.imageView.image = [UIImage waterAtImage:image waterImage:waterImage rect:CGRectMake(10, 10, 30, 30)];
+            
+            //裁剪任何角度方法
+            self.imageView.image = [UIImage clipRoundedCornerImageWithRadius:20 rectSize:CGSizeMake(100, 100) originalImage:image];
         }
             
         default:

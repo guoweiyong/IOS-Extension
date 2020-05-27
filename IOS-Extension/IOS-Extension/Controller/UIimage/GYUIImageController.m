@@ -7,13 +7,17 @@
 //
 
 #import "GYUIImageController.h"
-#import "UIImage+GYImageExtension.h"
+#import "UIImage+GYClipImage.h"
+#import "UIImage+GYGIF.h"
 
 @interface GYUIImageController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *markLable;
 @property (weak, nonatomic) IBOutlet UIImageView *testImageView;
+
+/// GIF图
+@property (nonatomic, strong) UIImageView *gifImageView;
 
 @end
 
@@ -60,9 +64,37 @@
             self.imageView.image = [UIImage clipRoundedCornerImageWithRadius:20 rectSize:CGSizeMake(100, 100) originalImage:image];
         }
             
+        case 3:
+        {
+            //加载GIF图
+            [self.view addSubview:self.gifImageView];
+//            NSString *retinaPath = [[NSBundle mainBundle] pathForResource:@"wishPool" ofType:@"gif"];
+//
+//            NSData *data = [NSData dataWithContentsOfFile:retinaPath];
+            //self.gifImageView.image = [UIImage animationGIFImageWithName:@"wishPool"];
+            __weak typeof(self) weakSelf = self;
+            [UIImage loadGIFImageWithName:@"wishPool" complete:^(UIImage * _Nullable image, NSArray * _Nullable gifImages, float totalDuration) {
+                //weakSelf.gifImageView.image = image;
+                weakSelf.gifImageView.animationImages = gifImages;
+                weakSelf.gifImageView.animationDuration = totalDuration;
+                [weakSelf.gifImageView startAnimating];
+                NSLog(@"gifImage.count==========%ld",gifImages.count);
+                NSLog(@"totalDuration=======%f",totalDuration);
+            }];
+        }
+            break;
+            
         default:
             break;
     }
 }
 
+
+- (UIImageView *)gifImageView {
+    if (!_gifImageView) {
+        _gifImageView = [[UIImageView alloc] initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 180, [UIScreen mainScreen].bounds.size.height/2 - 360, 360, 720)];
+    }
+    
+    return _gifImageView;
+}
 @end

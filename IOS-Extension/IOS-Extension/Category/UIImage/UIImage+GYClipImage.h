@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
  4.关闭上下文
  */
 
-@interface UIImage (GYImageExtension)
+@interface UIImage (GYClipImage)
 //根据 尺寸生成一张规定尺寸的纯色图片
 + (UIImage *)creatImageForColor:(CGSize)size bgColor:(UIColor *)color;
 
@@ -37,7 +37,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 裁剪任意角度的图片
 /// @param radius <#radius description#>
 /// @param size <#size description#>
-/// @param fillColor <#fillColor description#>
 + (UIImage *)clipRoundedCornerImageWithRadius:(float)radius rectSize:(CGSize)size originalImage:(UIImage *)originalImage;
 
 /// 绘制文字水印在图片上

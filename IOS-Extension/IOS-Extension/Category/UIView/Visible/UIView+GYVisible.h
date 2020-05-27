@@ -28,7 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// view的边框颜色
 @property (nonatomic, assign) IBInspectable UIColor *borderColor;
 
-
 @end
 
 NS_ASSUME_NONNULL_END

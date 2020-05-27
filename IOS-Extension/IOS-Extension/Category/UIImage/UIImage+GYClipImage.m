@@ -6,7 +6,7 @@
 //  Copyright © 2020 yunyi. All rights reserved.
 //
 
-#import "UIImage+GYImageExtension.h"
+#import "UIImage+GYClipImage.h"
 
 @implementation UIImage (GYImageExtension)
 
@@ -222,4 +222,6 @@
     
     return resultImage;
 }
+
+
 @end

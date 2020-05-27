@@ -17,9 +17,13 @@
 		2223245D246E236A00EEA04B /* IOS_ExtensionUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223245C246E236A00EEA04B /* IOS_ExtensionUITests.m */; };
 		2223246E246E262A00EEA04B /* GYTextViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2223246D246E262A00EEA04B /* GYTextViewViewController.m */; };
 		223D9D4A247D0B9100791F3A /* NSString+GYFilePath.m in Sources */ = {isa = PBXBuildFile; fileRef = 223D9D49247D0B9100791F3A /* NSString+GYFilePath.m */; };
-		22716C4C247361B2007FFB2F /* UIImage+GYImageExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 22716C4B247361B2007FFB2F /* UIImage+GYImageExtension.m */; };
+		22716C4C247361B2007FFB2F /* UIImage+GYClipImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 22716C4B247361B2007FFB2F /* UIImage+GYClipImage.m */; };
 		22716C512473627D007FFB2F /* GYUIImageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22716C4F2473627D007FFB2F /* GYUIImageController.m */; };
 		22716C522473627D007FFB2F /* GYUIImageController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22716C502473627D007FFB2F /* GYUIImageController.xib */; };
+		2283D226247DF9050087CD66 /* UIView+GYTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 2283D225247DF9050087CD66 /* UIView+GYTools.m */; };
+		2283D22D247E14160087CD66 /* UIColor+GYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 2283D22C247E14160087CD66 /* UIColor+GYExtension.m */; };
+		2283D230247E49B70087CD66 /* wishPool.gif in Resources */ = {isa = PBXBuildFile; fileRef = 2283D22F247E49B70087CD66 /* wishPool.gif */; };
+		2283D233247E63E10087CD66 /* UIImage+GYGIF.m in Sources */ = {isa = PBXBuildFile; fileRef = 2283D232247E63E10087CD66 /* UIImage+GYGIF.m */; };
 		229335D12476090000D58D2C /* UIView+GYFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 229335D02476090000D58D2C /* UIView+GYFrame.m */; };
 		229335D6247610CF00D58D2C /* UIView+GYVisible.m in Sources */ = {isa = PBXBuildFile; fileRef = 229335D5247610CF00D58D2C /* UIView+GYVisible.m */; };
 		229335DB247614B200D58D2C /* GYVisableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 229335D9247614B200D58D2C /* GYVisableViewController.m */; };
@@ -67,11 +71,18 @@
 		2223246D246E262A00EEA04B /* GYTextViewViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYTextViewViewController.m; sourceTree = "<group>"; };
 		223D9D48247D0B9100791F3A /* NSString+GYFilePath.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+GYFilePath.h"; sourceTree = "<group>"; };
 		223D9D49247D0B9100791F3A /* NSString+GYFilePath.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+GYFilePath.m"; sourceTree = "<group>"; };
-		22716C4A247361B2007FFB2F /* UIImage+GYImageExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GYImageExtension.h"; sourceTree = "<group>"; };
-		22716C4B247361B2007FFB2F /* UIImage+GYImageExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GYImageExtension.m"; sourceTree = "<group>"; };
+		22716C4A247361B2007FFB2F /* UIImage+GYClipImage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GYClipImage.h"; sourceTree = "<group>"; };
+		22716C4B247361B2007FFB2F /* UIImage+GYClipImage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GYClipImage.m"; sourceTree = "<group>"; };
 		22716C4E2473627D007FFB2F /* GYUIImageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GYUIImageController.h; sourceTree = "<group>"; };
 		22716C4F2473627D007FFB2F /* GYUIImageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GYUIImageController.m; sourceTree = "<group>"; };
 		22716C502473627D007FFB2F /* GYUIImageController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GYUIImageController.xib; sourceTree = "<group>"; };
+		2283D224247DF9050087CD66 /* UIView+GYTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GYTools.h"; sourceTree = "<group>"; };
+		2283D225247DF9050087CD66 /* UIView+GYTools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GYTools.m"; sourceTree = "<group>"; };
+		2283D22B247E14160087CD66 /* UIColor+GYExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+GYExtension.h"; sourceTree = "<group>"; };
+		2283D22C247E14160087CD66 /* UIColor+GYExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+GYExtension.m"; sourceTree = "<group>"; };
+		2283D22F247E49B70087CD66 /* wishPool.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = wishPool.gif; sourceTree = "<group>"; };
+		2283D231247E63E10087CD66 /* UIImage+GYGIF.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+GYGIF.h"; sourceTree = "<group>"; };
+		2283D232247E63E10087CD66 /* UIImage+GYGIF.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GYGIF.m"; sourceTree = "<group>"; };
 		229335CF2476090000D58D2C /* UIView+GYFrame.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GYFrame.h"; sourceTree = "<group>"; };
 		229335D02476090000D58D2C /* UIView+GYFrame.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+GYFrame.m"; sourceTree = "<group>"; };
 		229335D4247610CF00D58D2C /* UIView+GYVisible.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+GYVisible.h"; sourceTree = "<group>"; };
@@ -133,6 +144,7 @@
 		22232434246E236800EEA04B /* IOS-Extension */ = {
 			isa = PBXGroup;
 			children = (
+				2283D22E247E49840087CD66 /* Rsource */,
 				2223246B246E23B300EEA04B /* Controller */,
 				2223246A246E23AB00EEA04B /* Category */,
 				22232435246E236800EEA04B /* AppDelegate.h */,
@@ -170,6 +182,7 @@
 		2223246A246E23AB00EEA04B /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				2283D22A247E12DD0087CD66 /* UIColor */,
 				223D9D47247D0B3C00791F3A /* NSString */,
 				229335CE247608E000D58D2C /* UIView */,
 				229335CD247608C500D58D2C /* UIImage */,
@@ -206,11 +219,39 @@
 			path = UIimage;
 			sourceTree = "<group>";
 		};
+		2283D223247DF8F30087CD66 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				2283D224247DF9050087CD66 /* UIView+GYTools.h */,
+				2283D225247DF9050087CD66 /* UIView+GYTools.m */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		2283D22A247E12DD0087CD66 /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				2283D22B247E14160087CD66 /* UIColor+GYExtension.h */,
+				2283D22C247E14160087CD66 /* UIColor+GYExtension.m */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		2283D22E247E49840087CD66 /* Rsource */ = {
+			isa = PBXGroup;
+			children = (
+				2283D22F247E49B70087CD66 /* wishPool.gif */,
+			);
+			path = Rsource;
+			sourceTree = "<group>";
+		};
 		229335CD247608C500D58D2C /* UIImage */ = {
 			isa = PBXGroup;
 			children = (
-				22716C4A247361B2007FFB2F /* UIImage+GYImageExtension.h */,
-				22716C4B247361B2007FFB2F /* UIImage+GYImageExtension.m */,
+				22716C4A247361B2007FFB2F /* UIImage+GYClipImage.h */,
+				22716C4B247361B2007FFB2F /* UIImage+GYClipImage.m */,
+				2283D231247E63E10087CD66 /* UIImage+GYGIF.h */,
+				2283D232247E63E10087CD66 /* UIImage+GYGIF.m */,
 			);
 			path = UIImage;
 			sourceTree = "<group>";
@@ -218,6 +259,7 @@
 		229335CE247608E000D58D2C /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				2283D223247DF8F30087CD66 /* Tools */,
 				229335D324760E8100D58D2C /* Visible */,
 				229335D224760E7800D58D2C /* Frame */,
 			);
@@ -369,6 +411,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2283D230247E49B70087CD66 /* wishPool.gif in Resources */,
 				22232445246E236A00EEA04B /* LaunchScreen.storyboard in Resources */,
 				22232442246E236A00EEA04B /* Assets.xcassets in Resources */,
 				5CE6AD6524716927000E65E9 /* GYTextViewVC.xib in Resources */,
@@ -402,13 +445,16 @@
 				2223246E246E262A00EEA04B /* GYTextViewViewController.m in Sources */,
 				229335DB247614B200D58D2C /* GYVisableViewController.m in Sources */,
 				2223243D246E236800EEA04B /* ViewController.m in Sources */,
+				2283D226247DF9050087CD66 /* UIView+GYTools.m in Sources */,
 				229335D12476090000D58D2C /* UIView+GYFrame.m in Sources */,
 				22232437246E236800EEA04B /* AppDelegate.m in Sources */,
-				22716C4C247361B2007FFB2F /* UIImage+GYImageExtension.m in Sources */,
+				22716C4C247361B2007FFB2F /* UIImage+GYClipImage.m in Sources */,
 				5CE6AD6424716927000E65E9 /* GYTextViewVC.swift in Sources */,
 				22716C512473627D007FFB2F /* GYUIImageController.m in Sources */,
 				223D9D4A247D0B9100791F3A /* NSString+GYFilePath.m in Sources */,
+				2283D233247E63E10087CD66 /* UIImage+GYGIF.m in Sources */,
 				22232448246E236A00EEA04B /* main.m in Sources */,
+				2283D22D247E14160087CD66 /* UIColor+GYExtension.m in Sources */,
 				229335D6247610CF00D58D2C /* UIView+GYVisible.m in Sources */,
 				229335DE2476196D00D58D2C /* UIView+GYVisable.swift in Sources */,
 			);
